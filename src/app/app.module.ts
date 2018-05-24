@@ -10,12 +10,25 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ApiService } from './api.service';
 import { RegisterComponent } from './register/register.component';
+import { FileUploaderComponent } from './file-uploader/file-uploader.component';
+import { UpdatedFilesComponent } from './updated-files/updated-files.component';
+import { LoginComponent } from './login/login.component';
+
+const routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'upload', component: FileUploaderComponent },
+  { path: 'yourFiles', component: UpdatedFilesComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    RegisterComponent
+    LoginComponent,
+    RegisterComponent,
+    FileUploaderComponent,
+    UpdatedFilesComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +36,7 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     BrowserAnimationsModule,
     // MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule
-    RouterModule.forRoot([
-      {path: 'register', component: RegisterComponent}
-    ])
+    RouterModule.forRoot(routes)
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

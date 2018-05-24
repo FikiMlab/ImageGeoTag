@@ -2,13 +2,12 @@
   <div class="row text-center">
     <div class="col-6 margin-center">
       <h1>
-        Register New User
+        Login to your account
       </h1>
-      <form id="formData" #userData="ngForm" (ngSubmit)="registerUser(userData.value)">
+      <form id="loginFormData" #loginData="ngForm" (ngSubmit)="loginUser(loginData.value)">
         <input class="my-input" placeholder="login" name="login" type="text" ngModel>
         <input class="my-input" placeholder="password" name="password" type="password" ngModel>
-        <input class="my-input" placeholder="email" name="email" type="text" ngModel>
-        <input type="submit" value="Register" class="my-submit btn btn-success">
+        <input type="submit" value="Login" class="my-submit btn btn-success">
       </form>
     </div>
   </div>

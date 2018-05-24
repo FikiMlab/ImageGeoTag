@@ -1,0 +1,16 @@
+<script src="vendors/exif-js/exif-js"></script>
+
+<div class="container container-margin">
+  <div class="row text-center">
+    <div class="col-6 margin-center">
+      <h1>
+        Add new images
+      </h1>
+      <form id="formImages" #userImages="ngForm" (ngSubmit)="uploadImages()" enctype="multipart/form-data">
+        <input class="my-input" name="userImages" accept="image/*" type="file" multiple="true" (change)="getFiles($event)" ngModel>
+        <br>
+        <input type="submit" value="Submit" class="my-submit btn btn-success">
+      </form>
+    </div>
+  </div>
+</div>

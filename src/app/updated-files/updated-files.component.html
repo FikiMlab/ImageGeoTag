@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12 margin-center">
+      <h1>
+        Your Images
+      </h1>
+      <p>{{ images.length}} </p>
+      <div *ngFor="let image of images;">
+        <div class="image-elem">
+          <img class="my-img" src="../../assets/uploads/{{image.name}}" alt="Image">
+          <br>Coordinates:
+          <br>Lat: {{image.lat}}
+          <br>Lon: {{image.lon}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
