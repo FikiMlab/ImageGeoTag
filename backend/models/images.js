@@ -9,6 +9,10 @@ var oneImage = mongoose.Schema({
     type: String,
     required: true
   },
+  img: {
+    data: String,
+    contentType: String
+  },
   lon: {
     type: Number,
     required: true

@@ -24,7 +24,7 @@ export class FileUploaderComponent implements OnInit {
     for (let i = 0; i < this.files.length; i++) {
       formData.append('image', this.files[i]);
     }
-    this.apiService.addImage(formData);
+    this.apiService.uploadImage(formData);
     console.log('API successfull uploaded');
   }
 

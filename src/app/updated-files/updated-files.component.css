@@ -1,6 +1,8 @@
 .image-elem {
   margin: 10px 10px;
   border: 2px solid #000;
+  min-width: 240px;
+  min-height: 200px;
 }
 
 .my-img {
@@ -8,3 +10,21 @@
   width: auto;
   margin: 5px auto;
 }
+
+.my-img-fit {
+  max-width: 200px;
+  max-height: 100px;
+  margin: 5px auto;
+}
+
+.map-box {
+  -webkit-box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.75);
+  min-height: 800px;
+}
+
+agm-map {
+  height: 800px;
+}
+

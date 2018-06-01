@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AgmCoreModule } from '@agm/core';
+
 // import { MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -36,7 +38,10 @@ const routes = [
     FormsModule,
     BrowserAnimationsModule,
     // MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyADUTjFnH_hKzpMy9MjhKJJ26K6a68jCZk'
+    })
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

@@ -1,18 +1,38 @@
 <div class="container">
-  <div class="row text-center">
-    <div class="col-12 margin-center">
-      <h1>
-        Your Images
-      </h1>
-      <p>{{ images.length}} </p>
-      <div *ngFor="let image of images;">
-        <div class="image-elem">
-          <img class="my-img" src="../../assets/uploads/{{image.name}}" alt="Image">
-          <br>Coordinates:
-          <br>Lat: {{image.lat}}
-          <br>Lon: {{image.lon}}
-        </div>
+    <div class="row text-center">
+      <div class="col-12 margin-center">
+        <ng-template *ngIf="(images.length !== 0); then imagesLoaded else imagesNotLoaded"></ng-template>
+
+        <ng-template #imagesLoaded>
+          <h1>
+            Your Images
+          </h1>
+          <p>{{ images.length}} </p>
+
+          <div class="map-box">
+            <agm-map [latitude]="coordinates.lat" [longitude]="coordinates.lon" [zoom]="13">
+              <div *ngFor="let image of images;">
+                <agm-marker [latitude]="image.lat" [longitude]="image.lon" (mouseOver)="showImage(infoWindow, image)" (mouseOut)="hideImage(infoWindow, image)"
+                  [iconUrl]="'../../assets/mark.png'">
+                  <agm-info-window [disableAutoPan]="false" #infoWindow>
+                    <div>
+                      <img class="my-img" [src]="_DomSanitizer.bypassSecurityTrustUrl('data:' + image.img.data + ';base64,' + image.img.data)"
+                      />
+                    </div>
+                  </agm-info-window>
+                </agm-marker>
+              </div>
+            </agm-map>
+          </div>
+          <button (click)="setCenter()">Center</button>
+        </ng-template>
+
+        <ng-template #imagesNotLoaded>
+          <p>{{ images.length}} </p>
+          <p>
+            You don't have any images!
+          </p>
+        </ng-template>
       </div>
     </div>
   </div>
-</div>
