@@ -40,7 +40,7 @@ const routes = [
     // MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyADUTjFnH_hKzpMy9MjhKJJ26K6a68jCZk'
+      apiKey: 'API_KEY'
     })
   ],
   providers: [ApiService],
